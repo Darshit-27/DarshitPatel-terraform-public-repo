@@ -1,12 +1,9 @@
 terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
+  cloud {
+    organization = "darshit-org"
+
+    workspaces {
+      name = "terraform-nginx-project"
     }
   }
-}
-
-provider "aws" {
-  region = var.aws_region
 }
